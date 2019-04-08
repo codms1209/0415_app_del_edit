@@ -1,0 +1,16 @@
+<head>
+    <title>My first blog</title>
+
+</head>
+<body>
+    <h1>home</h1>
+    <a href="{% url 'new'%}" class = "top-menu">글쓰기</a>
+    {% for post in posts.all %}
+        <div class="container">
+            <h2><a href="home/post/{{post.id}}/">{{post.title}}</a></h2>
+            <p>{{post.created_data}}</p>
+            
+          
+        </div>
+    {% endfor %}
+</body>
